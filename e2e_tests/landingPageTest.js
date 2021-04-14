@@ -1,45 +1,31 @@
-require('../config.js');
+require("../config.js");
 
+describe("Quizmart dev landing page tests", function () {
+  before(function (browser) {
+    browser.url(browser.launch_url);
+  });
 
-describe('Quizmart dev landing page tests', function () {
+  test("Quizmart landing page test for dev env", function (browser) {
+    const landingPage = browser.page.landingPage();
+    const mainMenu = browser.page.menuPage();
 
-    before( function(browser) {
-            const landingPage = browser.page.landingPage();
-            browser.url(browser.launch_url + landingPage.url)
-        }
-    );
+    landingPage
+      .waitForElementVisible("@downloadAppSpace")
+      .assert.titleContains("Home | QuizMart")
+      .assert.visible("@playSpace")
+      .assert.visible("@aboutSpace")
+      .assert.visible("@forPlayersSpace")
+      .assert.visible("@forCreatorsSpace")
+      .assert.visible("@downloadAppSpace");
 
-    test('Quizmart landing page test for dev env', function (browser) {
-        const landingPage = browser.page.landingPage();
-        const mainMenu = browser.page.menuPage();
+    mainMenu.assert
+      .visible("@mainMenu")
+      .assert.containsText("@mainMenu", "For players")
+      .assert.containsText("@mainMenu", "For creators")
+      .assert.containsText("@mainMenu", "Sign in")
+      .assert.containsText("@mainMenu", "Register")
+      .assert.containsText("@mainMenu", "Download app");
+  });
 
-        landingPage
-            .waitForElementVisible("@downloadAppSpace")
-            .assert.titleContains('Home | QuizMart')
-            .assert.visible('@playSpace')
-            .assert.visible('@aboutSpace')
-            .assert.visible('@forPlayersSpace')
-            .assert.visible('@forCreatorsSpace')
-            .assert.visible('@downloadAppSpace');
-
-        mainMenu
-            .assert.visible("@mainMenu")
-            .assert.containsText("@mainMenu", 'For players')
-            .assert.containsText("@mainMenu", 'For creators')
-            .assert.containsText("@mainMenu", 'Sign in')
-            .assert.containsText("@mainMenu", 'Register')
-            .assert.containsText("@mainMenu", 'Download app');
-
-
-        // .waitForElementVisible('body')
-        // .assert.titleContains('Ecosia')
-        // .assert.visible('input[type=search]')
-        // .setValue('input[type=search]', 'nightwatch')
-        // .assert.visible('button[type=submit]')
-        // .click('button[type=submit]')
-        // .assert.containsText('.mainline-results', 'Nightwatch.js')
-    });
-
-    after(browser => browser.end());
+  after((browser) => browser.end());
 });
-  

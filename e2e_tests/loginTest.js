@@ -1,7 +1,10 @@
 require("../config.js");
 
 describe("Quizmart dev login tests", function () {
-    before(browser => browser.url(browser.launch_url));
+    before(function(browser) {
+        browser.url(browser.launch_url)
+    }
+);
 
     test("Quizmart login with email test", function (browser) {
         const landingPage = browser.page.landingPage();
