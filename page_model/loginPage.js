@@ -1,18 +1,13 @@
 module.exports = {
 
-url: "https://quizmart.telesoftas.net/",
+    url: "https://quizmart.telesoftas.net/",
 
-elements:{
-     mainMenu : ".css-5euejf.e1ytlbxu0",
-    playSpace : ".css-1842iib.e6jvphj1",
-    aboutSpace : ".css-5hcn91.em284gv0",
-    forPlayersSpace : "#for-players",
-    forCreatorsSpace : "#for-creators",
-    downloadAppSpace : "#download-app"
-
-},
-comands:[{
-
-}]
+    elements: {
+        signInHeader: ".css-1evf4jp.erkohki0",
+        emailField: "input[name='email']",
+        passField: "input[name='password']",
+        submitButton: "button[type='submit']",
+    },
+    comands: [{}]
 
 }

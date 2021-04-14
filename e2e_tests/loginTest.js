@@ -1,23 +1,28 @@
 require("../config.js");
 
 describe("Quizmart dev login tests", function () {
-  before((browser) => browser.url(PageURL.DEVPAGE));
+    before((browser) => browser.url(PageURL.DEVPAGE));
 
-  test("Quizmart login with email test", function (browser) {
-    const myPageObject = browser.page.landingPage();
-    myPageObject
-      .waitForElementVisible("@emailButton")
-      .click("@emailButton")
-      .waitForElementVisible("@signInHeader");
-    myPageObject
-      .setValue("@emailField", LoginInfo.LoginName)
-      .setValue("@passField", LoginInfo.LoginPassword)
-      .click("@submitButton")
-      .waitForElementVisible("@userMenu")
-      .click("@userMenu")
-      .click("@logoutButton")
-      .waitForElementVisible("@googleButton");
-  });
+    test("Quizmart login with email test", function (browser) {
+        const landingPage = browser.page.landingPage();
+        const loginPage = browser.page.loginPage();
+        const menuPage = browser.page.menuPage();
 
-  after((browser) => browser.end());
+        landingPage
+            .waitForElementVisible("@emailButton")
+            .click("@emailButton");
+        loginPage
+            .waitForElementVisible("@signInHeader")
+            .setValue("@emailField", LoginInfo.LoginName)
+            .setValue("@passField", LoginInfo.LoginPassword)
+            .click("@submitButton");
+        menuPage
+            .waitForElementVisible("@userMenu")
+            .click("@userMenu")
+            .click("@logoutButton");
+        landingPage
+            .waitForElementVisible("@googleButton");
+    });
+
+    after((browser) => browser.end());
 });
