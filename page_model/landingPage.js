@@ -1,13 +1,12 @@
 module.exports = {
     // can be string or function
-    url: function () {
-      return "https://quizmart.telesoftas.net/";
-    },
+    url: "https://quizmart.telesoftas.net/",
+    
     elements: {
       // shorthand, specifies selector
       emailButton : ".css-1tvacqz.eqfwhcm1",
         emailField : "*[name='email']",
-        googleButton : "//button//*[@id='google-icon']",
+        googleButton : "//*[contains(text(),'Continue with Google')]",
         // var googleButton = ".css-mps5rv";
          facebookButton : ".css-mps5rv",
         
@@ -16,7 +15,7 @@ module.exports = {
          passField : "*[name='password']",
          submitButton : "button[type='submit']",
          userMenu : ".filter",
-         logoutButton : "(//a[@href='/app/logout'])[2]"
+         logoutButton : 'a[href="/app/logout"]:nth-of-type(2)'
   
       // full
     //   myTextInput: {
