@@ -1,6 +1,6 @@
 module.exports = {
     // can be string or function
-    url: "https://quizmart.telesoftas.net/",
+    url: "sign-in#",
 
     elements: {
         // shorthand, specifies selector

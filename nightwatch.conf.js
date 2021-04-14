@@ -41,7 +41,12 @@ module.exports = {
         server_path: (Services.geckodriver ? Services.geckodriver.path : '')
       }
     },
-
+    dev: {
+      launch_url:"https://quizmart.telesoftas.net/"
+    },
+    prod: {
+      launch_url:"https://quizmart.io/"
+    },
     safari: {
       desiredCapabilities : {
         browserName : 'safari',
