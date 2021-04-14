@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="0"
+            tests="1">
+
+  <testsuite name="loginTest"
+    errors="1" failures="0" hostname="" id="" package="loginTest" skipped="0"
+    tests="1" time="0.2780" timestamp="">
+  
+    <testcase name="Quizmart login with email test" classname="loginTest" time="0.2780" assertions="2">
+
+    
+
+    
+    <error message="emailField is not defined" type="error"><![CDATA[
+    ReferenceError: emailField is not defined
+    at DescribeInstance.&lt;anonymous&gt; (/Users/andrius/Documents/Temp/NwJs/e2e_tests/loginTest.js:25:23)
+    at Context.call (/Users/andrius/Documents/Temp/NwJs/node_modules/nightwatch/lib/testsuite/context.js:375:35)
+    at TestCase.run (/Users/andrius/Documents/Temp/NwJs/node_modules/nightwatch/lib/testsuite/testcase.js:53:31)
+    at Runnable.__runFn (/Users/andrius/Documents/Temp/NwJs/node_modules/nightwatch/lib/testsuite/index.js:376:80)
+    at Runnable.run (/Users/andrius/Documents/Temp/NwJs/node_modules/nightwatch/lib/testsuite/runnable.js:123:21)
+    at TestSuite.createRunnable (/Users/andrius/Documents/Temp/NwJs/node_modules/nightwatch/lib/testsuite/index.js:443:33)
+    at TestSuite.handleRunnable (/Users/andrius/Documents/Temp/NwJs/node_modules/nightwatch/lib/testsuite/index.js:448:18)
+    at /Users/andrius/Documents/Temp/NwJs/node_modules/nightwatch/lib/testsuite/index.js:376:21
+    at processTicksAndRejections (node:internal/process/task_queues:94:5)
+    at async DefaultRunner.runTestSuite (/Users/andrius/Documents/Temp/NwJs/node_modules/nightwatch/lib/runner/test-runners/default.js:68:7)
+    ]]></error>
+    
+    </testcase>
+  
+
+  
+    <system-err>
+        ReferenceError: emailField is not defined
+       at DescribeInstance.&lt;anonymous&gt; (/Users/andrius/Documents/Temp/NwJs/e2e_tests/loginTest.js:25:23)
+       at processTicksAndRejections (node:internal/process/task_queues:94:5)
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>
