@@ -3,7 +3,11 @@ require('../config.js');
 
 describe('Quizmart dev landing page tests', function () {
 
-    before(browser => browser.url(browser.launch_url));
+    before( function(browser) {
+            const landingPage = browser.page.landingPage();
+            browser.url(browser.launch_url + landingPage.url)
+        }
+    );
 
     test('Quizmart landing page test for dev env', function (browser) {
         const landingPage = browser.page.landingPage();
