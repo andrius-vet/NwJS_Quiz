@@ -5,6 +5,11 @@ PageURL = {
 }
 
 LoginInfo = {
-    LoginName: 'vytautas4@mailinator.com',
+    LoginEmail: 'vytautas4@mailinator.com',
     LoginPassword: 'vytautas4'
+}
+
+RegistrationInfo = {
+    tmpEmail: 'vytautas20@mailinator.com',
+    tmpPassword: 'vytautas20'
 }

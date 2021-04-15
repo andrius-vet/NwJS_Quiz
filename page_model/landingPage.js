@@ -1,3 +1,10 @@
+var xSelector = function (selector) {
+    return {
+        selector: selector,
+        locateStrategy: "xpath",
+    };
+};
+
 module.exports = {
     // can be string or function
     url: "sign-in#",
@@ -10,9 +17,13 @@ module.exports = {
         forCreatorsSpace: "#for-creators",
         downloadAppSpace: "#download-app",
 
-        googleButton: "#google-icon",
-        facebookButton: ".css-mps5rv",
-        emailButton: ".css-1tvacqz.eqfwhcm1",
+        loginTab: ".css-6msegl.e6jvphj4",
+        registerTab: ".css-18t3gjt.e6jvphj4",
+
+        loginGoogleButton: "#google-icon",
+        loginFacebookButton: ".css-mps5rv",
+        loginEmailButton: ".css-1tvacqz.eqfwhcm1",
+        registerEmailButton: ".css-1tvacqz.eqfwhcm1"
 
         // full
         //   myTextInput: {

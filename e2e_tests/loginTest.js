@@ -12,11 +12,11 @@ describe("Quizmart dev login tests", function () {
         const menuPage = browser.page.menuPage();
 
         landingPage
-            .waitForElementVisible("@emailButton")
-            .click("@emailButton");
+            .waitForElementVisible("@loginEmailButton")
+            .click("@loginEmailButton");
         loginPage
             .waitForElementVisible("@signInHeader")
-            .setValue("@emailField", LoginInfo.LoginName)
+            .setValue("@emailField", LoginInfo.LoginEmail)
             .setValue("@passField", LoginInfo.LoginPassword)
             .click("@submitButton");
         menuPage
@@ -24,7 +24,7 @@ describe("Quizmart dev login tests", function () {
             .click("@userMenu")
             .click("@logoutButton");
         landingPage
-            .waitForElementVisible("@googleButton");
+            .waitForElementVisible("@loginGoogleButton");
     });
 
     after((browser) => browser.end());
