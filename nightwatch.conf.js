@@ -15,7 +15,7 @@ module.exports = {
   custom_commands_path: "",
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-assertions
-  custom_assertions_path: "e2e_tests/custom-assertions",
+  custom_assertions_path: "",
 
   // See https://nightwatchjs.org/guide/#external-globals
   globals_path: "",

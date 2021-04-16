@@ -3,11 +3,11 @@ const mainPage = require("../page_model/mainPage.js");
 require("../config.js");
 
 describe("Quizmart dev login tests", function () {
-  before(function (browser) {
-    const loginPage = browser.page.loginPage();
-    browser.url(browser.launch_url);
-    loginPage.loginToQuiz();
-  });
+    before(function (browser) {
+        const loginPage = browser.page.loginPage();
+        browser.url(browser.launch_url);
+        loginPage.loginToQuiz();
+    });
 
   test("Quizmart login with email test", function (browser) {
     const mainPage = browser.page.mainPage();
@@ -40,5 +40,5 @@ describe("Quizmart dev login tests", function () {
     
   });
 
-  after((browser) => browser.end());
+    after((browser) => browser.end());
 });

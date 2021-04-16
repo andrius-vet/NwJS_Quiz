@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="0"
+            tests="1">
+
+  <testsuite name="landingPageTest"
+    errors="0" failures="0" hostname="" id="" package="landingPageTest" skipped="0"
+    tests="1" time="0.3110" timestamp="">
+  
+    <testcase name="Quizmart landing page test for dev env" classname="landingPageTest" time="0.3110" assertions="13">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    </testcase>
+  
+
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

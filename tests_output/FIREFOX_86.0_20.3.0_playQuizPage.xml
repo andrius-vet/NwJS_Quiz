@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="playQuizPage"
+    errors="0" failures="1" hostname="" id="" package="playQuizPage" skipped="0"
+    tests="1" time="5.180" timestamp="">
+  
+    <testcase name="Quizmart login with email test" classname="playQuizPage" time="5.180" assertions="1">  <failure message="Testing if the URL is &#39;https://quizmart.telesoftas.net/app/game/options&#39; in 5000ms - expected &#34;is &#39;https://quizmart.telesoftas.net/app/game/options&#39;&#34; but got: &#34;https://quizmart.telesoftas.net/&#34; (5126ms)">    at DescribeInstance.&lt;anonymous&gt; (/Users/andrius/Documents/Temp/NwJs/e2e_tests/playQuizPage.js:16:20)
+    at processTicksAndRejections (node:internal/process/task_queues:94:5)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>
