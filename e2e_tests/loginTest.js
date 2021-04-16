@@ -24,6 +24,7 @@ describe("Quizmart dev login tests", function () {
             .click("@userMenu")
             .click("@logoutButton");
         landingPage
+            .waitForElementPresent("@googleButton")
             .waitForElementVisible("@googleButton");
     });
 

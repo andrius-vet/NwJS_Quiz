@@ -13,17 +13,10 @@ module.exports = {
         googleButton: "#google-icon",
         facebookButton: ".css-mps5rv",
         emailButton: ".css-1tvacqz.eqfwhcm1",
-
-        // full
-        //   myTextInput: {
-        //     selector: 'input[type=text]',
-        //     locateStrategy: 'css selector'
-        //   }
     },
     commands: [
         {
-            // myCustomPause: function () {
-            //   this.api.pause(this.props.myPauseTime);
+          
         },
     ],
 };

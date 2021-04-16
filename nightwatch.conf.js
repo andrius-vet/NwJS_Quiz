@@ -15,7 +15,7 @@ module.exports = {
   custom_commands_path: "",
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-assertions
-  custom_assertions_path: "",
+  custom_assertions_path: "e2e_tests/custom-assertions",
 
   // See https://nightwatchjs.org/guide/#external-globals
   globals_path: "",
@@ -35,6 +35,11 @@ module.exports = {
 
       desiredCapabilities: {
         browserName: "firefox",
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+        loggingPrefs: {
+          "browser": "ALL"
+        }
       },
 
       webdriver: {
@@ -90,6 +95,11 @@ module.exports = {
     chrome: {
       desiredCapabilities: {
         browserName: "chrome",
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+        loggingPrefs: {
+          "browser": "ALL"
+        },
         chromeOptions: {
           // This tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
           // w3c: false,

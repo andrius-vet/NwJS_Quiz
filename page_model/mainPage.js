@@ -26,6 +26,8 @@ module.exports = {
     ),
     discoverMainButton: "button.quizButton.searchIcon",
     libraryMainButton: xSelector("//button[contains(text(),'Your library')]"),
+    dicoveryButton: xSelector("//button[contains(text(),'Discover')]"),
+    filtersButton: xSelector("//button[contains(text(),'Filters')]"),
   },
   commands: [{}],
 };
