@@ -51,7 +51,7 @@ module.exports = {
       launch_url: "https://quizmart.telesoftas.net/",
     },
     prod: {
-      launch_url: "https://quizmart.io/",
+      launch_url: "https://app.quizmart.io/",
     },
     safari: {
       desiredCapabilities: {

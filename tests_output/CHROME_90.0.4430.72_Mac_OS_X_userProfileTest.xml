@@ -5,9 +5,9 @@
 
   <testsuite name="userProfileTest"
     errors="0" failures="0" hostname="" id="" package="userProfileTest" skipped="0"
-    tests="3" time="10.01" timestamp="">
+    tests="3" time="9.762" timestamp="">
   
-    <testcase name="Quizmart register user test" classname="userProfileTest" time="2.865" assertions="5">
+    <testcase name="Quizmart register user test" classname="userProfileTest" time="2.816" assertions="5">
 
     
 
@@ -20,7 +20,7 @@
     
     </testcase>
   
-    <testcase name="Quizmart edit user profile test" classname="userProfileTest" time="4.062" assertions="20">
+    <testcase name="Quizmart edit user profile test" classname="userProfileTest" time="4.265" assertions="20">
 
     
 
@@ -63,7 +63,7 @@
     
     </testcase>
   
-    <testcase name="Quizmart Delete user profile test" classname="userProfileTest" time="3.084" assertions="11">
+    <testcase name="Quizmart Delete user profile test" classname="userProfileTest" time="2.681" assertions="11">
 
     
 

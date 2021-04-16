@@ -5,9 +5,9 @@
 
   <testsuite name="loginTest"
     errors="0" failures="0" hostname="" id="" package="loginTest" skipped="0"
-    tests="1" time="2.637" timestamp="">
+    tests="1" time="2.828" timestamp="">
   
-    <testcase name="Quizmart login with email test" classname="loginTest" time="2.637" assertions="5">
+    <testcase name="Quizmart login with email test" classname="loginTest" time="2.828" assertions="5">
 
     
 
