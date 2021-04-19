@@ -1,4 +1,5 @@
 const mainPage = require("../page_model/mainPage.js");
+const generalFunctions = require("../Tools/generalFunctions.js");
 
 require("../config.js");
 
@@ -28,28 +29,11 @@ describe("Quizmart dev login tests", function () {
       .click("@filtersButton")
       .setValue('input[name="tags"]', 'test')
       .pause(1000);
+    generalFunctions.setConsoleError(browser);
+    // generalFunctions.getConsoleError()
+    //     .setConsoleError(browser)
+    //     .getCon
 
-    async function getConsoleError() {
-      return new Promise((resolve, reject) => {
-          browser.getLogTypes()
-          .getLog('browser', function(logEntriesArray) {
-            logEntriesArray.forEach(function(log) {
-                if(log.message.includes("current-password")){
-                  console.log('[' + log.level + '] ' + log.timestamp + ' : ' + log.message);
-                  resolve(log);
-                }
-            })
-           
-          })
-      });
-    };
-    getConsoleError().then((log) => {
-        var text =log.message;
-        console.log(text);
-        browser.assert.ok(text.includes("current-password"));
-      console.log(text.includes("current-password"))
-      
-    })
 
     
   });
