@@ -12,7 +12,7 @@ module.exports = {
   page_objects_path: "page_model",
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-commands
-  custom_commands_path: "",
+  custom_commands_path: "custom-commands",
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-assertions
   custom_assertions_path: "",
@@ -51,7 +51,7 @@ module.exports = {
       launch_url: "https://quizmart.telesoftas.net/",
     },
     prod: {
-      launch_url: "https://app.quizmart.io/",
+      launch_url: "https://quizmart.io/",
     },
     safari: {
       desiredCapabilities: {

@@ -1,6 +1,6 @@
 PageURL = {
-    PRODPAGE: "https://quizmart.io",
-    DEVPAGE: "https://quizmart.telesoftas.net/"
+    PRODPAGE: "quizmart.io",
+    DEVPAGE: "quizmart.telesoftas.net/"
 
 }
 
@@ -13,3 +13,4 @@ RegistrationInfo = {
     tmpEmail: 'vytautas20@mailinator.com',
     tmpPassword: 'vytautas20'
 }
+

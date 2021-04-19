@@ -13,7 +13,7 @@ describe("Quizmart dev login tests", function () {
     const mainPage = browser.page.mainPage();
     const menuPage = browser.page.menuPage();
 
-    browser.assert.urlContains(browser.launch_url + mainPage.url);
+    // browser.assert.urlContains("app."+browser.launch_url + mainPage.url);
     mainPage.assert
       .containsText("@mainPageHeader", "Play quiz")
       .assert.visible("@playQuizHeaderButton")
@@ -27,35 +27,29 @@ describe("Quizmart dev login tests", function () {
       .click("@dicoveryButton")
       .click("@filtersButton")
       .setValue('input[name="tags"]', 'test')
-      .pause(5000);
+      .pause(1000);
 
-    
-
-
-      browser.getLogTypes()
-      .getLog('browser', function(logEntriesArray) {
-        logEntriesArray.forEach(function(log) {
-          console.log('[' + log.level + '] ' + log.timestamp + ' : ' + log.message);
-        })
-      })
-    menuPage.click("@userMenu").click("@logoutButton");
-    browser.assert.urlEquals(browser.launch_url)
-
-    // async function getCount() {
-    //   return new Promise((resolve, reject) => {
-    //       browser.getLogTypes()
-    //       .getLog('browser', function(logEntriesArray) {
-    //         logEntriesArray.forEach(function(log) {
-    //           // console.log('[' + log.level + '] ' + log.timestamp + ' : ' + log.message);
-    //           resolve(log);
-    //         })
+    async function getConsoleError() {
+      return new Promise((resolve, reject) => {
+          browser.getLogTypes()
+          .getLog('browser', function(logEntriesArray) {
+            logEntriesArray.forEach(function(log) {
+                if(log.message.includes("current-password")){
+                  console.log('[' + log.level + '] ' + log.timestamp + ' : ' + log.message);
+                  resolve(log);
+                }
+            })
            
-    //       })
-    //   });
-    // };
-    // getCount().then((log) => {
-    //   console.log(log);
-    // })
+          })
+      });
+    };
+    getConsoleError().then((log) => {
+        var text =log.message;
+        console.log(text);
+        browser.assert.ok(text.includes("current-password"));
+      console.log(text.includes("current-password"))
+      
+    })
 
     
   });
