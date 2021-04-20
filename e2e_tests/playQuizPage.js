@@ -1,14 +1,14 @@
 const mainPage = require("../page_model/mainPage.js");
-const generalFunctions = require("../Tools/generalFunctions.js");
+// import { getConsoleError } from "../Tools/generalFunctions.js";
 
 require("../config.js");
 
 describe("Quizmart dev login tests", function () {
-    before(function (browser) {
-        const loginPage = browser.page.loginPage();
-        browser.url(browser.launch_url);
-        loginPage.loginToQuiz();
-    });
+  before(function (browser) {
+    const loginPage = browser.page.loginPage();
+    browser.url(browser.launch_url);
+    loginPage.loginToQuiz();
+  });
 
   test("Quizmart login with email test", function (browser) {
     const mainPage = browser.page.mainPage();
@@ -27,16 +27,20 @@ describe("Quizmart dev login tests", function () {
       .assert.visible("@libraryMainButton")
       .click("@dicoveryButton")
       .click("@filtersButton")
-      .setValue('input[name="tags"]', 'test')
+      .setValue('input[name="tags"]', "test")
       .pause(1000);
-    generalFunctions.setConsoleError(browser);
-    // generalFunctions.getConsoleError()
-    //     .setConsoleError(browser)
-    //     .getCon
-
-
-    
   });
+
+  after((browser) =>
+    browser
+      .errorLoging((log) => {
+        var text = log.message;
+        console.log(text);
+        browser.assert.ok(text.includes("current-password"));
+      })
+      .end()
+  );
+});
 
     after((browser) => browser.end());
 });
