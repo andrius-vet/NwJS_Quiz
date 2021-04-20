@@ -12,7 +12,6 @@ describe("Quizmart dev login tests", function () {
 
   test("Quizmart login with email test", function (browser) {
     const mainPage = browser.page.mainPage();
-    const menuPage = browser.page.menuPage();
 
     // browser.assert.urlContains("app."+browser.launch_url + mainPage.url);
     mainPage.assert
