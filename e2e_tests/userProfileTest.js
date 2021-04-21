@@ -5,6 +5,7 @@ describe("Quizmart dev user registration tests", function () {
             browser.url(browser.launch_url)
         }
     );
+//Todo: reikalinga spreCondition ar useris jau egzistuoja
 
     test("Quizmart register user test", function (browser) {
         const landingPage = browser.page.landingPage();
