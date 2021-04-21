@@ -18,7 +18,7 @@ module.exports = {
   custom_assertions_path: "",
 
   // See https://nightwatchjs.org/guide/#external-globals
-  globals_path: "",
+  globals_path: "globals/globals.js",
 
   webdriver: {},
 
@@ -101,6 +101,7 @@ module.exports = {
           // w3c: false,
           // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
           args: [
+            "window-size=1920,1440"
             //'--no-sandbox',
             //'--ignore-certificate-errors',
             //'--allow-insecure-localhost',
@@ -133,6 +134,7 @@ module.exports = {
           // w3c: false,
           // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
           args: [
+            "window-size=1920,1440"
             //'--no-sandbox',
             //'--ignore-certificate-errors',
             //'--allow-insecure-localhost',
