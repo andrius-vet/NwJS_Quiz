@@ -34,6 +34,20 @@ module.exports = {
         deleteConfirmationButton: xSelector("(//button[contains(@class,'delete')])[2]"),
 
     },
-    commands: [{}]
+    commands: [{
+        deleteUser(browser) {
+            const menuPage = this.api.page.menuPage();
+            const profilePage = this.api.page.profilePage();
+            menuPage
+                .waitForElementPresent("@userMenu")
+                .click("@userMenu")
+                .click("@profileButton");
+            profilePage
+                .waitForElementPresent("@profileDeleteAcc")
+                .click("@profileDeleteAcc")
+                .waitForElementPresent("@deleteConfirmationButton")
+                .click("@deleteConfirmationButton")
+            }
+    }]
 
 }

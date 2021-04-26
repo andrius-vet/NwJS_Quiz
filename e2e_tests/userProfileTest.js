@@ -2,10 +2,11 @@ require("../config.js");
 
 describe("Quizmart dev user registration tests", function () {
     before(function (browser) {
+            const loginPage = browser.page.loginPage();
             browser.url(browser.launch_url)
+            loginPage.deleteUserIfExist(RegistrationInfo.tmpEmail, RegistrationInfo.tmpPassword, browser);
         }
     );
-//Todo: reikalinga spreCondition ar useris jau egzistuoja
 
     test("Quizmart register user test", function (browser) {
         const landingPage = browser.page.landingPage();
@@ -81,15 +82,15 @@ describe("Quizmart dev user registration tests", function () {
             .waitForElementPresent("@userMenu")
             .click("@userMenu")
             .click("@profileButton"),
-            profilePage
-                .waitForElementPresent("@profileDeleteAcc")
-                .click("@profileDeleteAcc")
-                .waitForElementPresent("@deleteConfirmationButton")
-                .click("@deleteConfirmationButton"),
-            loginPage
-                .loginToQuizCustom(RegistrationInfo.tmpEmail, RegistrationInfo.tmpPassword)
-                .waitForElementPresent("@loginError")
-                .assert.containsText("@loginError", "The email address or password is incorrect")
+        profilePage
+            .waitForElementPresent("@profileDeleteAcc")
+            .click("@profileDeleteAcc")
+            .waitForElementPresent("@deleteConfirmationButton")
+            .click("@deleteConfirmationButton"),
+        loginPage
+            .loginToQuizCustom(RegistrationInfo.tmpEmail, RegistrationInfo.tmpPassword)
+            .waitForElementPresent("@loginError")
+            .assert.containsText("@loginError", "The email address or password is incorrect")
 
     });
 

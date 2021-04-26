@@ -39,6 +39,3 @@ describe("Quizmart dev login tests", function () {
     browser.end()
   );
 });
-
-    after((browser) => browser.end());
-});
