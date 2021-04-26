@@ -18,7 +18,7 @@ module.exports = {
   custom_assertions_path: "",
 
   // See https://nightwatchjs.org/guide/#external-globals
-  globals_path: "",
+  globals_path: "globals/globals.js",
 
   webdriver: {},
 
@@ -47,12 +47,7 @@ module.exports = {
         server_path: Services.geckodriver ? Services.geckodriver.path : "",
       },
     },
-    dev: {
-      launch_url: "https://quizmart.telesoftas.net/",
-    },
-    prod: {
-      launch_url: "https://quizmart.io/",
-    },
+   
     safari: {
       desiredCapabilities: {
         browserName: "safari",
@@ -92,6 +87,72 @@ module.exports = {
       },
     },
 
+    dev: {
+      launch_url: "https://quizmart.telesoftas.net/",
+      desiredCapabilities: {
+        browserName: "chrome",
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+        loggingPrefs: {
+          "browser": "ALL"
+        },
+        chromeOptions: {
+          // This tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
+          // w3c: false,
+          // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
+          args: [
+            "window-size=1920,1440"
+            //'--no-sandbox',
+            //'--ignore-certificate-errors',
+            //'--allow-insecure-localhost',
+            //'--headless'
+          ],
+        },
+      },
+      
+
+      webdriver: {
+        start_process: true,
+        port: 9515,
+        server_path: Services.chromedriver ? Services.chromedriver.path : "",
+        cli_args: [
+          // --verbose
+        ],
+      },
+    },
+    prod: {
+      launch_url: "https://quizmart.io/",
+      desiredCapabilities: {
+        browserName: "chrome",
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+        loggingPrefs: {
+          "browser": "ALL"
+        },
+        chromeOptions: {
+          // This tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
+          // w3c: false,
+          // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
+          args: [
+            "window-size=1920,1440"
+            //'--no-sandbox',
+            //'--ignore-certificate-errors',
+            //'--allow-insecure-localhost',
+            //'--headless'
+          ],
+        },
+      },
+      
+
+      webdriver: {
+        start_process: true,
+        port: 9515,
+        server_path: Services.chromedriver ? Services.chromedriver.path : "",
+        cli_args: [
+          // --verbose
+        ],
+      },
+    },
     chrome: {
       desiredCapabilities: {
         browserName: "chrome",
@@ -112,6 +173,7 @@ module.exports = {
           ],
         },
       },
+      
 
       webdriver: {
         start_process: true,

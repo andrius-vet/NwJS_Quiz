@@ -7,7 +7,7 @@ var xSelector = function (selector) {
 
 module.exports = {
 
-    url: "https://quizmart.telesoftas.net/app/profile",
+    url: "",
     elements: {
         profileHeader: ".css-jakagy.e1bg3u451",
         // Personal information

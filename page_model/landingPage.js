@@ -7,7 +7,7 @@ var xSelector = function (selector) {
 
 module.exports = {
     // can be string or function
-    url: "sign-in#",
+    url: "",
 
     elements: {
         // shorthand, specifies selector

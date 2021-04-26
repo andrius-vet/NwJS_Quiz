@@ -12,8 +12,7 @@ describe("Quizmart dev login tests", function () {
 
   test("Quizmart login with email test", function (browser) {
     const mainPage = browser.page.mainPage();
-    const menuPage = browser.page.menuPage();
-
+    const errorCodes = browser.globals.errorCodes;
     // browser.assert.urlContains("app."+browser.launch_url + mainPage.url);
     mainPage.assert
       .containsText("@mainPageHeader", "Play quiz")
@@ -29,16 +28,15 @@ describe("Quizmart dev login tests", function () {
       .click("@filtersButton")
       .setValue('input[name="tags"]', "test")
       .pause(1000);
+      browser.errorLoging((log) => {
+        var text = log.message;
+        console.log(text);
+        browser.assert.ok(text.includes(errorCodes.random));
+      })
   });
 
   after((browser) =>
-    browser
-      .errorLoging((log) => {
-        var text = log.message;
-        console.log(text);
-        browser.assert.ok(text.includes("current-password"));
-      })
-      .end()
+    browser.end()
   );
 });
 

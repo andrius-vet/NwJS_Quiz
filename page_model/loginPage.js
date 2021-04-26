@@ -7,7 +7,7 @@ var xSelector = function (selector) {
 
 module.exports = {
 
-    url: "https://quizmart.telesoftas.net/",
+    url: "",
 
     elements: {
         // Login Page
