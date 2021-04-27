@@ -57,6 +57,35 @@ module.exports = {
             // .waitForElementPresent(mainPage.elements.discoverMainButton);
 
         },
+        deleteUserIfExist(usr, pss, browser) {
+            const landingPage = this.api.page.landingPage();
+            const menuPage = this.api.page.menuPage();
+            const profilePage = this.api.page.profilePage();
+
+            this
+                .waitForElementPresent(landingPage.elements.downloadAppSpace)
+                .waitForElementPresent(landingPage.elements.loginEmailButton)
+                .click(landingPage.elements.loginEmailButton)
+                .waitForElementVisible("@signInHeader")
+                .setValue("@emailField", usr)
+                .setValue("@passField", pss)
+                .click("@submitButton")
+            browser
+                .pause(1000)
+                .elements(menuPage.elements.userMenu, function (result) {
+                    if (result.value.length > 0) {
+                        console.log("rasta")
+                        profilePage.deleteUser();
+                    } else {
+                        console.log("nerasta")
+                        menuPage
+                            .waitForElementVisible(menuPage.elements.signInButton)
+                            .click(menuPage.elements.signInButton)
+                        landingPage
+                            .waitForElementPresent(landingPage.elements.downloadAppSpace)
+                    }
+                });
+        },
     }]
 
 }
