@@ -12,7 +12,7 @@ module.exports = {
   page_objects_path: "page_model",
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-commands
-  custom_commands_path: "",
+  custom_commands_path: "custom-commands",
 
   // See https://nightwatchjs.org/guide/extending-nightwatch/#writing-custom-assertions
   custom_assertions_path: "",
